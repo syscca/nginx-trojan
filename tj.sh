@@ -295,7 +295,7 @@ cp -rf "./${NG_NAME}.conf" "${NG_CONFIG}"
 fi
 
 if [ -f "/var/www/${newname}/index.html" ];then
-echo "/var/www/${newname}/index.html"
+echo "/var/www/${newname}/index.html文件已存在"
 else
 echo 正在创建 "/var/www/${newname}/index.html"...
 cat > /var/www/${newname}/index.html << EOF
