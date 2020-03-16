@@ -102,13 +102,17 @@ apt install socat qrencode curl xz-utils build-essential -y
 
 fw_save(){
 if [ `command -v iptables-save` ];then
-    echo "iptables-persistent 已经安装"
+    echo "iptables 已经安装"
 else
+echo "安装 iptables..."
+apt install iptables -y
+fi
+
 echo 安装iptables-persistent...
 echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-set-selections
 echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-set-selections
 apt -y install iptables-persistent
-fi
+
 echo 清空防火墙...
 iptables -P INPUT ACCEPT
 iptables -P FORWARD ACCEPT
