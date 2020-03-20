@@ -35,6 +35,8 @@ echo "输入阿里云 dns api Ali_Secret : "
 read alysecret
 echo "设置 trojan 密码password: "
 read TJ_PASS
+echo "输入防火墙 SSH 要开放的端口: "
+read ssh_prot
 
 SYSTEMDPREFIX="/lib/systemd/system"
 SUFFIX=.tar.gz
@@ -133,7 +135,7 @@ iptables -A INPUT -i lo -j ACCEPT
 iptables -A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A OUTPUT -j ACCEPT
-iptables -A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp -m state --state NEW --dport ${ssh_prot} -j ACCEPT
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 iptables -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
