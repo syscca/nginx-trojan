@@ -130,9 +130,10 @@ ip6tables -X
 
 echo 添加防火墙规则...
 iptables -A INPUT -i lo -j ACCEPT
+iptables -A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A OUTPUT -j ACCEPT
-iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 iptables -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
@@ -142,7 +143,6 @@ iptables -A FORWARD -j REJECT
 echo 保存iptables 防火墙规则...
 iptables-save > /etc/iptables/rules.v4
 ip6tables-save > /etc/iptables/rules.v6
-
 }
 
 setup_bbr(){
