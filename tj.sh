@@ -21,6 +21,12 @@ if [[ $(uname -m 2> /dev/null) != x86_64 ]]; then
     exit 1
 fi
 
+echo 刷新源...
+apt update
+
+echo 安装软件 socat qrencode curl xz build-essential...
+apt install socat qrencode curl xz-utils build-essential -y
+
 echo "输入域名不要带www: "
 read newname
 echo "输入阿里云 dns api Ali_Key : "
@@ -90,14 +96,6 @@ if systemctl is-active --quiet rsyslog; then
 else
     echo "syslog没有运行"
 fi
-}
-
-run_update(){
-echo 刷新源...
-apt update
-
-echo 安装软件 socat qrencode curl xz build-essential...
-apt install socat qrencode curl xz-utils build-essential -y
 }
 
 fw_save(){
@@ -498,7 +496,6 @@ echo Done!
 }
 
 off_log
-run_update
 fw_save
 setup_bbr
 set_user
