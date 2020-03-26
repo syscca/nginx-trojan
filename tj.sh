@@ -291,12 +291,8 @@ fi
 echo Downloading ${NG_NAME} ${NG_VERSION} CONFIG File...
 curl -LO --progress-bar "${NG_CONFIG_URL}" || wget -q --show-progress "${NG_CONFIG_URL}"
 
-if [ -f "${NG_CONFIG}" ];then
-echo "${NG_CONFIG}文件已存在"
-else
 echo copy ${NG_NAME}.conf to ${NG_CONFIG}...
 cp -rf "./${NG_NAME}.conf" "${NG_CONFIG}"
-fi
 
 if [ -f "/var/www/${newname}/index.html" ];then
 echo "/var/www/${newname}/index.html文件已存在"
