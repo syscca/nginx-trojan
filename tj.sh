@@ -62,7 +62,7 @@ ZLIB_DOWNLOADURL="http://zlib.net/${ZLIB_TARBALL}"
 # http://zlib.net/zlib-1.2.11.tar.gz
 
 SSL_NAME=openssl
-SSL_VERSION=1.1.1d
+SSL_VERSION=1.1.1f
 SSL_TARBALL="${SSL_NAME}-${SSL_VERSION}${SUFFIX}"
 SSL_DOWNLOADURL="https://www.openssl.org/source/${SSL_TARBALL}"
 # https://www.openssl.org/source/openssl-1.1.1d.tar.gz
@@ -72,7 +72,7 @@ SSLKEY="/etc/nginx/ssl/${newname}/${newname}.key"
 SSLFILE="/etc/nginx/ssl"
 
 TJ_NAME=trojan
-TJ_VERSION=1.14.1
+TJ_VERSION=1.15.1
 TJ_TARBALL="${TJ_NAME}-${TJ_VERSION}-linux-amd64.tar.xz"
 TJ_DOWNLOADURL="https://github.com/trojan-gfw/${TJ_NAME}/releases/download/v${TJ_VERSION}/${TJ_TARBALL}"
 TJ_INSTALLPREFIX=/usr/local
@@ -140,7 +140,6 @@ iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 iptables -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
 iptables -A INPUT -j REJECT
-iptables -A FORWARD -j REJECT
 
 echo 保存iptables 防火墙规则...
 iptables-save > /etc/iptables/rules.v4
@@ -250,7 +249,7 @@ cd ${NG_NAME}-${NG_VERSION}
  --with-stream_ssl_preread_module \
  --with-pcre=../pcre-8.44 \
  --with-zlib=../zlib-1.2.11 \
- --with-openssl=../openssl-1.1.1d \
+ --with-openssl=../openssl-1.1.1f \
  --with-cc-opt='-g -O2 -fdebug-prefix-map=./nginx-1.16.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fPIC' \
  --with-ld-opt='-Wl,-z,relro -Wl,-z,now -Wl,--as-needed -pie'
 
