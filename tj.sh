@@ -72,7 +72,7 @@ SSLKEY="/etc/nginx/ssl/${newname}/${newname}.key"
 SSLFILE="/etc/nginx/ssl"
 
 TJ_NAME=trojan
-TJ_VERSION=1.15.1
+TJ_VERSION=$(curl -fsSL https://api.github.com/repos/trojan-gfw/trojan/releases/latest | grep tag_name | sed -E 's/.*"v(.*)".*/\1/')
 TJ_TARBALL="${TJ_NAME}-${TJ_VERSION}-linux-amd64.tar.xz"
 TJ_DOWNLOADURL="https://github.com/trojan-gfw/${TJ_NAME}/releases/download/v${TJ_VERSION}/${TJ_TARBALL}"
 TJ_INSTALLPREFIX=/usr/local
