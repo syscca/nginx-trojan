@@ -461,6 +461,7 @@ Type=simple
 StandardError=journal
 ExecStart="${TJ_BINARYPATH}" "${TJ_CONFIGPATH}"
 ExecReload=/bin/kill -HUP \${MAINPID}
+LimitNOFILE=51200
 Restart=on-failure
 RestartSec=3s
 
