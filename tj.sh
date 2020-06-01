@@ -250,7 +250,7 @@ cd ${NG_NAME}-${NG_VERSION}
  --with-pcre=../pcre-8.44 \
  --with-zlib=../zlib-1.2.11 \
  --with-openssl=../openssl-1.1.1f \
- --with-cc-opt='-g -O2 -fdebug-prefix-map=./nginx-1.16.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fPIC' \
+ --with-cc-opt='-g -O2 -fdebug-prefix-map=../nginx-1.16.1=. -fstack-protector-strong -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fPIC' \
  --with-ld-opt='-Wl,-z,relro -Wl,-z,now -Wl,--as-needed -pie'
 
 echo make ${NG_NAME} ${NG_VERSION}...
