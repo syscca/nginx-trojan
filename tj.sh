@@ -83,7 +83,7 @@ TJ_SYSTEMDPATH="${SYSTEMDPREFIX}/${TJ_NAME}.service"
 # https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz
 
 ymname="/etc/nginx/conf.d/${newname}.conf"
-wwip=$(curl -fsSL https://jsonip.com | grep -o "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}")
+wwip=$(curl -fsSL https://ipv4.jsonip.com | grep -o "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}")
 
 TMPDIR="$(mktemp -d)"
 
