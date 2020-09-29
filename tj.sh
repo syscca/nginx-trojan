@@ -80,7 +80,6 @@ TJ_INSTALLPREFIX=/usr/local
 TJ_BINARYPATH="${TJ_INSTALLPREFIX}/bin/${TJ_NAME}"
 TJ_CONFIGPATH="${TJ_INSTALLPREFIX}/etc/${TJ_NAME}/config.json"
 TJ_SYSTEMDPATH="${SYSTEMDPREFIX}/${TJ_NAME}.service"
-# https://github.com/trojan-gfw/trojan/releases/download/v1.14.1/trojan-1.14.1-linux-amd64.tar.xz
 
 ymname="/etc/nginx/conf.d/${newname}.conf"
 wwip=$(curl -fsSL https://ipv4.jsonip.com | grep -o "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}")
