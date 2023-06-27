@@ -44,7 +44,7 @@ NG_NAME=nginx
 NG_VERSION=1.16.1
 NG_TARBALL="${NG_NAME}-${NG_VERSION}${SUFFIX}"
 NG_DOWNLOADURL="https://nginx.org/download/${NG_TARBALL}"
-NG_CONFIG_URL="https://raw.githubusercontent.com/vinyo/nginx-trojan/master/nginx.conf"
+NG_CONFIG_URL="https://raw.githubusercontent.com/syscca/nginx-trojan/master/nginx.conf"
 NG_CONFIG="/etc/nginx/nginx.conf"
 NG_SYSTEMDPATH="${SYSTEMDPREFIX}/${NG_NAME}.service"
 # http://nginx.org/download/nginx-1.16.1.tar.gz
