@@ -6,4 +6,4 @@ debina 9 nginx trojan一键编译安装
 
 确保80，443，端口不占用
 
-wget https://raw.githubusercontent.com/vinyo/nginx-trojan/master/tj.sh && chmod +x tj.sh && ./tj.sh
+wget https://raw.githubusercontent.com/syscca/nginx-trojan/master/tj.sh && chmod +x tj.sh && ./tj.sh
